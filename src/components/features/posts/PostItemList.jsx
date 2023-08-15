@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Col, Row } from "react-bootstrap";
 import PostItem from "./PostItem";
-import PostHeadingTitle from "./PostHeadingTitle";
 
 export default function PostItemList({ posts }) {
   const renderedContent = posts.length ? (
@@ -13,11 +12,8 @@ export default function PostItemList({ posts }) {
   );
 
   return (
-    <Row className="justify-content-center g-2">
-      <Col lg={7}>
-        <PostHeadingTitle title={`${posts.length} postingan`} />
-        {renderedContent}
-      </Col>
+    <Row className="justify-content-center g-2 py-3">
+      <Col lg={7}>{renderedContent}</Col>
     </Row>
   );
 }

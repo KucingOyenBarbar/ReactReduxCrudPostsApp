@@ -3,21 +3,28 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "react-bootstrap/Card";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-export default function PostItemBody({ title, content, timestamp, userId }) {
+export default function PostItemBody({
+  title,
+  content,
+  timestamp,
+  userId,
+  postId,
+}) {
   const users = useSelector((state) => state.users);
 
   const postUser = users?.find((user) => user.id === Number(userId));
 
   const PostItemBodyTitle = () => (
     <div className="position-relative px-0 mx-0">
-      <a
-        href="/"
+      <Link
+        to={`/explore/${postId}`}
         aria-label="Baca Selengkapnya"
         className="link-offset-2 link-underline link-underline-opacity-0 text-start text-white text-capitalize fst-normal fs-4 lh-1 "
       >
         {title.length > 40 ? `${title.substring(0, 40)}...` : title}
-      </a>
+      </Link>
       <Card.Subtitle className="pt-2">
         <span className="text-start text-white-50 fst-normal fs-6 me-2">
           {" "}
@@ -41,14 +48,14 @@ export default function PostItemBody({ title, content, timestamp, userId }) {
 
   const PostMoreDetails = () => (
     <div className="position-relative px-0 mx-0 ">
-      <a
-        href="/"
+      <Link
+        to={`/explore/${postId}`}
         aria-label="Baca Selengkapnya"
         className="link-secondary link-offset-2 link-underline link-underline-opacity-0 fs-6 icon-link icon-link-hover stretched-link"
       >
         Baca Selengkapnya{" "}
         <FontAwesomeIcon className="align-middles" icon={faArrowRight} />
-      </a>
+      </Link>
     </div>
   );
 

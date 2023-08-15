@@ -1,7 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import ThemeProvider from "react-bootstrap/ThemeProvider";
 import Layout from "./components/Layout";
-import PostContainer from "./containers/PostContainer";
+import Home from "./containers/Home";
+import ExploreDetail from "./containers/explore/ExploreDetail";
+import ExploreIndex from "./containers/explore/ExploreIndex";
 
 export default function App() {
   return (
@@ -12,10 +14,10 @@ export default function App() {
     >
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<PostContainer />} />
-
+          <Route index element={<Home />} />
           <Route path="/explore">
-            <Route index element={<div>Explore</div>}></Route>
+            <Route index element={<ExploreIndex />}></Route>
+            <Route path=":id" element={<ExploreDetail />}></Route>
           </Route>
         </Route>
       </Routes>
