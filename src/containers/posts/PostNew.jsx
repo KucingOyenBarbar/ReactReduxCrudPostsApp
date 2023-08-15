@@ -12,7 +12,7 @@ export default function PostNew() {
 
   const onAddPostsHandler = ({ title, content, userId }) => {
     dispatch(addNewPosts({ title, body: content, userId })).unwrap();
-    navigate("/");
+    navigate("/posts");
   };
 
   return (

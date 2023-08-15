@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { fetchAllPosts, addNewPosts } from "../../utils/lib/fetchPostData";
-import { initialPostsData } from "../../utils/data/initialPostsData";
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 // Add initil state
@@ -55,7 +54,6 @@ const postReducer = createSlice({
       })
       .addCase(fetchAllPosts.fulfilled, (state, action) => {
         state.status = "succeeded";
-
         const loadedPosts = action.payload.map((post) => {
           post.date = new Date().toISOString();
           post.reactions = {

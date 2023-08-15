@@ -52,10 +52,7 @@ export default function PostInputForm({ AddPosts, setShowInputForm }) {
           <Form onSubmit={onSubmitValuesHandler} onReset={onResetAllValues}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>
-                Judul Postingan{" "}
-                <span className="text-danger">
-                  ( Sisa Karakter {limitKarakter - title.length} )
-                </span>
+                Judul Postingan <span className="text-danger">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
