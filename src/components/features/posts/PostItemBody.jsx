@@ -31,7 +31,7 @@ export default function PostItemBody({
           {timestamp}
         </span>
         <span className="text-start text-white-50 fst-italic fs-6">
-          Di posting oleh {postUser.name}
+          Di posting oleh {postUser?.name}
         </span>
       </Card.Subtitle>
     </div>
