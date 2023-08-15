@@ -4,6 +4,10 @@ import Layout from "./components/Layout";
 import Home from "./containers/Home";
 import ExploreDetail from "./containers/explore/ExploreDetail";
 import ExploreIndex from "./containers/explore/ExploreIndex";
+import PostIndex from "./containers/posts/PostIndex";
+import PostNew from "./containers/posts/PostNew";
+import PostPreview from "./containers/posts/PostPreview";
+import PostEdit from "./containers/posts/PostEdit";
 
 export default function App() {
   return (
@@ -15,9 +19,16 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/explore">
-            <Route index element={<ExploreIndex />}></Route>
-            <Route path=":id" element={<ExploreDetail />}></Route>
+          <Route path="explore">
+            <Route index element={<ExploreIndex />} />{" "}
+            <Route path=":id" element={<ExploreDetail />} />
+          </Route>
+
+          <Route path="posts">
+            <Route index element={<PostIndex />} />
+            <Route path="new" element={<PostNew />} />
+            <Route path=":id/preview" element={<PostPreview />} />
+            <Route path=":id/edit" element={<PostEdit />} />
           </Route>
         </Route>
       </Routes>

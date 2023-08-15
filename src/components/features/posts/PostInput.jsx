@@ -3,7 +3,6 @@
 import { Row, Col, Card, Form, Button, Stack } from "react-bootstrap";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Toast } from "../../../utils/alertMessage";
 
 export default function PostInputForm({ AddPosts, setShowInputForm }) {
   const [title, setTitle] = useState("");
@@ -47,7 +46,7 @@ export default function PostInputForm({ AddPosts, setShowInputForm }) {
       <Col lg={7} md={10}>
         <Card body className="rounded mb-3">
           <Card.Title className="text-start text-capitalize fst-normal fs-4">
-            Tambah Postingan Baru
+            Form Tambah Postingan Baru
           </Card.Title>
           <hr className="text-secondary"></hr>
           <Form onSubmit={onSubmitValuesHandler} onReset={onResetAllValues}>
@@ -107,13 +106,14 @@ export default function PostInputForm({ AddPosts, setShowInputForm }) {
                 Posting
               </Button>
               <Button
-                onClick={() =>
-                  setTimeout(() => {
-                    setShowInputForm(false);
-                  }, 300)
-                }
+                // onClick={() =>
+                //   setTimeout(() => {
+                //     setShowInputForm(false);
+                //   }, 300)
+                // }
+
                 variant="danger"
-                type="button"
+                type="reset"
                 className="d-block w-100 text-center fst-normal fs-6"
               >
                 Batalkan

@@ -14,6 +14,12 @@ export default function Home() {
         >
           Explore
         </Link>
+        <Link
+          to={"/posts"}
+          className="link-offset-2 link-underline link-underline-opacity-0"
+        >
+          Explore
+        </Link>
       </Col>
     </Row>
   );
